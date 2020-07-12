@@ -26,5 +26,6 @@ impl From<io::Error> for ScrapError {
 
 /// Load a page and return its HTML body as a `String`
 pub async fn load_page(url: &str) -> Result<String, ScrapError> {
-    Ok(reqwest::get(url).await?.text().await?)
+    // Ok(reqwest::get(url).await?.text().await?)
+    Ok(String::from("Hello, world!"))
 }

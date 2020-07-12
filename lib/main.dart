@@ -26,13 +26,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   Scrap scrap;
-  void _incrementCounter() {
-    setState(() {
-      _counter = widget.adder.add(_counter, 1);
-    });
-  }
 
   @override
   void initState() {
@@ -51,14 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            const SizedBox(height: 100),
             RaisedButton(
               color: Colors.greenAccent,
               child: Text(
@@ -72,23 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
     );
   }
 
   void _showWebPage() async {
     final html = await scrap.loadPage('https://www.rust-lang.org/');
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      isDismissible: true,
-      builder: (context) => SingleChildScrollView(
-        child: Text(html),
-      ),
-    );
+    print(html);
   }
 }

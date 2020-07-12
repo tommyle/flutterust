@@ -1,8 +1,8 @@
 /// bindings for `libaddr`
 
-import 'dart:ffi';
-import 'package:ffi/ffi.dart' as ffi;
 import 'dart:io';
+import 'package:ffi/ffi.dart' as ffi;
+import 'dart:ffi';
 
 // ignore_for_file: unused_import, camel_case_types, non_constant_identifier_names
 final DynamicLibrary _dl = _open();
